@@ -8,18 +8,17 @@ public class Chaudron {
 		this.quantitePotion = quantite;
 		this.forcePotion = forcePotion;
 	}
+
 	public boolean resterPotion() {
 		return quantitePotion > 0;
 	}
+
 	public int prendreLouche() {
 		if (resterPotion()) {
-			quantitePotion--; 
-			return forcePotion; 
+			quantitePotion--;
+			return forcePotion;
 		} else {
 			return 0;
 		}
 	}
 }
-			
-
-	

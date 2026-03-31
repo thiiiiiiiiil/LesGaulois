@@ -26,16 +26,16 @@ public class Druide {
 	public void booster(Gaulois gaulois) {
 		boolean contientPotion = chaudron.resterPotion();
 		String nomGaulois = gaulois.getNom();
-		
-		if(contientPotion){
-			if(nomGaulois.equals("Obélix")) {
+
+		if (contientPotion) {
+			if (nomGaulois != null && nomGaulois.equals("Obélix")) {
 				parler("Non, " + nomGaulois + " Non!...Et tu le sais trèes bien!");
-			}else {
+			} else {
 				int forcePotion = chaudron.prendreLouche();
 				gaulois.boirePotion(forcePotion);
 				parler("Tiens " + nomGaulois + " un peu de potion magique ");
 			}
-		}else{
+		} else {
 			parler("Désole " + nomGaulois + " il n'y a plus une seule goutte de potion. ");
 		}
 	}
@@ -43,6 +43,5 @@ public class Druide {
 	public String getNom() {
 		return nom;
 	}
-	
-	
+
 }
