@@ -63,4 +63,5 @@ public class Village {
 	village.afficherVillageois();
 	Gaulois doublePolemix = new Gaulois("Doublepolémix", 4);
 }
+}
 	
