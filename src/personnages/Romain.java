@@ -7,6 +7,16 @@ public class Romain {
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
+		assert isInvariantVerified() : "Erreur!";
+	}
+
+	public static void main(String[] args) {
+		Romain minus = new Romain("Minus", 6);
+		System.out.println("Testez classique");
+		minus.recevoirCoup(2);
+		
+		System.out.println("Testez avec Minus");
+		minus.recevoirCoup(-2);
 	}
 
 	public String getNom() {
@@ -24,6 +34,8 @@ public class Romain {
 	}
 
 	public void recevoirCoup(int forceCoup) {
+		assert forceCoup > 0 : "Précondition";
+		int forceAvantCoup = force;
 		force = force - forceCoup;
 		if (force < 1) {
 			force = 0;
@@ -31,7 +43,13 @@ public class Romain {
 		} else {
 			parler("Aie");
 		}
+		assert force < forceAvantCoup : "Postcondition";
+		assert isInvariantVerified() : "Erreur: la force est negative!";
 
+	}
+
+	private boolean isInvariantVerified() {
+		return force >= 0;
 	}
 
 }
