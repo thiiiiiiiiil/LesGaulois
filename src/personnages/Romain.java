@@ -15,16 +15,9 @@ public class Romain {
 		this.force = force;
 		assert isInvariantVerified() : "Erreur!";
 	}
-	public int getForce() {
-	    return force;
-	}
-	public static void main(String[] args) {
-		Romain minus = new Romain("Minus", 6);
 
-		minus.sEquiper(Equipement.CASQUE);
-		minus.sEquiper(Equipement.CASQUE);
-		minus.sEquiper(Equipement.BOUCLIER);
-		minus.sEquiper(Equipement.CASQUE);
+	public int getForce() {
+		return force;
 	}
 
 	public String getNom() {
@@ -75,7 +68,7 @@ public class Romain {
 		parler(texte);
 		forceCoup -= resistanceEquipement;
 		if (forceCoup < 0) {
-		    forceCoup = 0;
+			forceCoup = 0;
 		}
 		return forceCoup;
 	}
@@ -125,6 +118,15 @@ public class Romain {
 		default:
 			break;
 		}
+	}
+
+	public static void main(String[] args) {
+		Romain minus = new Romain("Minus", 6);
+
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.BOUCLIER);
+		minus.sEquiper(Equipement.CASQUE);
 	}
 
 }
